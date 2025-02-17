@@ -1,0 +1,12 @@
+<app-header/>
+<form class="formDiv">
+    <div class="formBorder">
+        <label for="email">Email</label>
+        <input type="text" id="email" [(ngModel)]="email" name="email"/>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password"/>
+
+        <button (click)="loginUser()">LogIn</button>
+    </div>
+</form>

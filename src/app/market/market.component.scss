@@ -1,0 +1,64 @@
+.background{
+    height: 500vh;
+    width: 100%;
+    z-index: -1;
+    background-color: #777;
+    position: fixed;
+}
+
+.ghostbox{
+    height: 70px;
+    width: 100%;
+}
+
+.marketDiv{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        border: 2px solid black;
+        box-shadow: white 1px 1px 4px 1px;
+        border-radius: 5px;
+        .cardImage{
+            color: rebeccapurple;
+            font-size: larger;
+            padding: 40px;
+            border: 2px solid black;
+        }
+    
+        .cardTitle{
+            color: white;
+            font-size: medium;
+            padding: 10px;
+        }
+    
+        .cardPrice{
+            color: white;
+            font-size: medium;
+            padding: 10px;
+        }
+
+        .buyBtn{
+            margin-top: 20px;
+            border-radius: 10px;
+            padding: 10px 30px;
+            text-shadow: black 1px 1px 2px;
+            border: 2px solid green;
+            background-color: lightgreen;
+            color: white;
+        }
+        .buyBtn:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+    }
+}

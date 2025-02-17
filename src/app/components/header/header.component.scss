@@ -1,0 +1,43 @@
+header{
+    position: fixed;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 16px;
+    padding-block: 8px;
+
+    color: white;
+    background-color: #333;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    span{
+        cursor: pointer;
+    }
+    span:hover{
+        color:red
+    }
+
+    li{ 
+        margin-left: 5px;
+        list-style-type: none;
+        cursor: pointer;
+    }
+    li:hover{
+        color: red;
+    }
+
+    ul{
+        display: flex;
+        gap: 15px;
+    }
+
+}

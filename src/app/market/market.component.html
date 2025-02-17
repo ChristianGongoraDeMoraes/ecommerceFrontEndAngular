@@ -1,0 +1,25 @@
+<app-header/>
+<div class="background"></div>
+<div class="ghostbox"></div>
+<div class="marketDiv">
+
+    @for (product of products; track product.name) {
+        <div class="card">
+            <div class="cardImage">
+                {{ product.name }}
+            </div>
+
+            <div class="cardTitle">
+                {{ product.name }}
+            </div>
+
+            <div class="cardPrice">
+                {{ product.price }}
+            </div>
+
+            <button class="buyBtn" (click)="buyBtn(product.name)">Buy</button>
+        </div>
+    } @empty {
+    <h1>There are no items.</h1>
+    }
+</div>

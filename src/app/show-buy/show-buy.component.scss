@@ -1,0 +1,43 @@
+.divShowBuy{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+
+    .divImg{
+        .spanImg{
+            border: 2px solid black;
+            padding: 150px 150px;
+            border-radius: 10px;
+            box-shadow: black 1px 1px 1px 1px;
+        }
+    }
+
+    .productExplain{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+        color: white;
+        font-size: 50px;
+        text-shadow: black 1px 1px 3px;
+
+    }
+    .buyBtn{
+        border: 2px solid green;
+        background-color: lightgreen;
+        color: white;
+        text-shadow: black 1px 1px 3px;
+        font-size: x-large;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .buyBtn:hover{
+        cursor: pointer;
+        background-color: green;
+    }
+}
