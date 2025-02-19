@@ -40,7 +40,7 @@ export class HttpServiceService {
   }
 
   postUser(user: UserRegister): Observable<any>{
-    const url = `http://localhost:8080/Api/User`
+    const url = `http://localhost:8080/Api/User/register`
     return this.http.post(url, user);
   }
   

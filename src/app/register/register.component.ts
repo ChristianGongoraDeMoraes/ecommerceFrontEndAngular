@@ -28,10 +28,11 @@ export class RegisterComponent {
       email: this.email,
       password : this.password
     }
+ 
 
     this.request.postUser(user).subscribe({
       next: (data: any) => {
-        console.log(data);
+        alert("Register Successfull!")
       },
       error: (error: any) => {
         console.error('Erro ao cadastrar USER:', error);
