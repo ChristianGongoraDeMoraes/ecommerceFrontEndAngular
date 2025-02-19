@@ -31,8 +31,11 @@ export class LoginComponent {
 
     this.request.getLoginUser(user).subscribe({
       next: (data: any) => {
-        console.log(data);
-        this.router.navigate(['market']);
+        if(data){
+          this.router.navigate(['market']);
+        }else{
+          alert("Login invalido!")
+        }
       },
       error: (error: any) => {
         console.error('Erro ao logar USER:', error);

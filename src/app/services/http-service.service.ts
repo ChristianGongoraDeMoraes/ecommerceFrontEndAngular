@@ -30,8 +30,8 @@ export class HttpServiceService {
   }
 
   getLoginUser(user: User): Observable<any>{
-    const url = `http://localhost:8080/Api/User/${user.email}`
-    return this.http.get(url);
+    const url = `http://localhost:8080/Api/User/login`
+    return this.http.post(url, user);
   }
 
   postProductsToApi(product: Product): Observable<any>{
