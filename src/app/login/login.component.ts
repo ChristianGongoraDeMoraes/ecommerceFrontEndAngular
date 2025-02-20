@@ -3,7 +3,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from '../services/http-service.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 type User = {
   email: String,
@@ -12,7 +12,7 @@ type User = {
 
 @Component({
   selector: 'app-login',
-  imports: [HeaderComponent, FormsModule],
+  imports: [HeaderComponent, FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
