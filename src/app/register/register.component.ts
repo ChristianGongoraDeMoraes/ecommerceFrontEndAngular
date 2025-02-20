@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../components/header/header.component';
 import { HttpServiceService } from '../services/http-service.service';
+import { Router } from '@angular/router';
 
 type UserRegister = {
   name: String,
@@ -16,7 +17,7 @@ type UserRegister = {
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-  constructor(private request : HttpServiceService){}
+  constructor(private request : HttpServiceService, private router: Router){}
 
   email = '';
   password = '';
@@ -32,10 +33,15 @@ export class RegisterComponent {
 
     this.request.postUser(user).subscribe({
       next: (data: any) => {
-        alert("Register Successfull!")
+        if(data){
+          alert("Register Successfull!");
+          this.router.navigate(["login"]);
+        }else{
+          alert("Something goes wrong");
+        }
       },
-      error: (error: any) => {
-        console.error('Erro ao cadastrar USER:', error);
+      error: (err: any) => {
+        alert("Something goes wrong");
       }
     });
    }

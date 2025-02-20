@@ -38,7 +38,7 @@ export class LoginComponent {
         }
       },
       error: (error: any) => {
-        console.error('Erro ao logar USER:', error);
+       alert('Something goes wrong');
       }
     });
    }
