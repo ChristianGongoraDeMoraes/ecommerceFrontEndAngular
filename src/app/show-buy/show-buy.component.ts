@@ -16,9 +16,12 @@ type Product = {
 export class ShowBuyComponent implements OnInit{
   constructor(private prod : ProductServiceService){}
   product: Product = {name: '', price: 0};
+  urlImage:String = "";
+
   
   ngOnInit(): void {
     this.product = { name: this.prod.productName, price: this.prod.productPrice }
+    this.urlImage = `http://localhost:8080/products/get/image/product/${this.product.name}`
   }
 
 }

@@ -7,7 +7,7 @@ import { ProductServiceService } from '../services/product-service.service';
 
 type  Product = {
   name: String,
-  price: Number,
+  price: Number
 }
 
 

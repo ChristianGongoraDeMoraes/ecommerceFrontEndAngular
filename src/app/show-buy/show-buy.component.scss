@@ -9,10 +9,11 @@
 
     .divImg{
         .spanImg{
-            border: 2px solid black;
-            padding: 150px 150px;
-            border-radius: 10px;
-            box-shadow: black 1px 1px 1px 1px;
+            img{
+                border: 2px solid black;
+                border-radius: 10px;
+                box-shadow: rgb(255, 255, 255) 1px 1px 3px 1px, rgb(255, 255, 255) -1px -1px 3px -1px;
+            }
         }
     }
 

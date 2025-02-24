@@ -5,7 +5,7 @@ import { HttpServiceService } from '../services/http-service.service';
 
 type Product = {
   name: String,
-  price: Number,
+  price: Number
 }
 
 @Component({
@@ -21,6 +21,7 @@ export class CreateProductComponent {
   
   name = '';
   price = 0;
+  
  
 
   addNewProduct(){
