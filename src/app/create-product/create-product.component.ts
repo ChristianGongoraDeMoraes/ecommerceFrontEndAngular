@@ -21,8 +21,12 @@ export class CreateProductComponent {
   
   name = '';
   price = 0;
+  selectedImage: any = null;
   
  
+  onFileSelected(event: any) {
+    this.selectedImage = event.target.files[0];
+  }
 
   addNewProduct(){
     const product : Product = {
@@ -34,11 +38,25 @@ export class CreateProductComponent {
       next: (data: any) => {
         console.log(data);
         alert("user criado com sucesso!");
+        this.postImageApi();
       },
       error: (error: any) => {
-        console.error('Erro ao cadastrar USER:', error);
+        console.error('Erro ao cadastrar product:', error);
       }
     });
-   }
+
+  }
+  
+  postImageApi(){
+    this.request.postImageToApi(this.selectedImage, this.name).subscribe({
+      next: (data: any)=>{
+        console.log("postImageToApi:"+data);
+
+      },
+      error: (error: any) =>{
+        console.log('Erro ao cadastar image', error);
+      }
+    });
+  }
 
 }

@@ -35,8 +35,19 @@ export class HttpServiceService {
   }
 
   postProductsToApi(product: Product): Observable<any>{
-    const url = `http://localhost:8080/Api/Product`
+    const url = `http://localhost:8080/Api/Product`;
     return this.http.post(url, product);
+  }
+  postImageToApi(image: any, prodName: any): Observable<any>  {
+    const url = `http://localhost:8080/products/upload/image`;
+    let formatProdName: string = `{"productName" : "${prodName}"}`;
+
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('product', formatProdName);
+    console.log(formData);
+
+    return this.http.post(url, formData);
   }
 
   postUser(user: UserRegister): Observable<any>{
