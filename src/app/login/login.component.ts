@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from '../services/http-service.service';
 import { Router, RouterLink } from '@angular/router';
+import { LoggedServiceService } from '../services/logged-service.service';
 
 type User = {
   email: String,
@@ -18,7 +19,9 @@ type User = {
 })
 export class LoginComponent {
   
-  constructor(private request : HttpServiceService, private router : Router){}
+  constructor(private request : HttpServiceService, private router : Router, private logServ: LoggedServiceService){}
+
+
 
   email = '';
   password = '';
@@ -32,6 +35,7 @@ export class LoginComponent {
     this.request.getLoginUser(user).subscribe({
       next: (data: any) => {
         if(data){
+          this.logServ.setLoggedOn;
           this.router.navigate(['market']);
         }else{
           alert("Login invalido!")

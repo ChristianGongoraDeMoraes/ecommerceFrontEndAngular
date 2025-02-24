@@ -11,23 +11,13 @@ import { catchError } from 'rxjs';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent /*implements OnInit*/{
-
-  //httpService = inject(HttpServiceService)
-/*
-  OnInit(){
-  this.httpService
-    .getProductsFromApi()
-    .pipe(
-      catchError((err)=>{
-        console.log(err);
-        throw err;
-      })
-    )
-    .subscribe((any) =>{
-      this.anyItems.set(any);
-    });
-  }
-*/
+  
+  //"http://localhost:8080/image/get/image/GjREWsvW4AAOmSY.jpg"
+  
+  email:String  = "gato@hotmail.com";
+  urlPicture: String = `http://localhost:8080/image/get/image/user/${this.email}`;
+  
+  picture:String = this.urlPicture;
 
 }
 
