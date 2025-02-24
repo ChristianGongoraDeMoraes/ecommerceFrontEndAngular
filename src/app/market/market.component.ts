@@ -42,11 +42,11 @@ export class MarketComponent implements OnInit{
       next: (data: any) => {
         for(let i of data){
           this.products.push(i)
-          console.log(this.products)
+          //console.log(this.products)
         }
       },
       error: (error: any) => {
-        console.error('Erro ao cadastrar USER:', error);
+        console.error('Erro', error);
       }
     });
   }

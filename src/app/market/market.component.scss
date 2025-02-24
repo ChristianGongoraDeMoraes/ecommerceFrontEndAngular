@@ -18,7 +18,7 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-
+    margin: 20px;
     .card{
         display: flex;
         flex-direction: column;
@@ -29,10 +29,13 @@
         box-shadow: white 1px 1px 4px 1px;
         border-radius: 5px;
         .cardImage{
-            color: rebeccapurple;
-            font-size: larger;
-            padding: 40px;
-            border: 2px solid black;
+            img{
+                width: 150px;
+                height: 150px;
+                color: rebeccapurple;
+                font-size: larger;
+                border: 2px solid black;
+            }
         }
     
         .cardTitle{

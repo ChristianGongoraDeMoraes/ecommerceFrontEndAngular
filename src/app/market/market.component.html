@@ -6,7 +6,7 @@
     @for (product of products; track product.name) {
         <div class="card">
             <div class="cardImage">
-                {{ product.name }}
+                <img src="http://localhost:8080/products/get/image/product/{{product.name}}">
             </div>
 
             <div class="cardTitle">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="cardPrice">
-                {{ product.price }}
+                ${{ product.price }}
             </div>
 
             <button class="buyBtn" (click)="buyBtn(product.name)">Buy</button>
