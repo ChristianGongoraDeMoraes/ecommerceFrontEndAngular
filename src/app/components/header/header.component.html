@@ -4,15 +4,17 @@
         <span><p>Lost.js</p></span>
         <ul>
             <li routerLink="/">Home</li>
-            <li routerLink="/login">Login</li>
-            <li routerLink="/register">Register</li>
-                <!-- 
-                <li routerLink="/market">Market</li>
+            <!-- 
                 -->
-            <li routerLink="/createProduct">CreateProduct</li>
             @if(isLogged){
+                <li routerLink="/createProduct">CreateProduct</li>
+                <li routerLink="/market">Market</li>
                 <li><img src="http://localhost:8080/image/get/image/user/{{email}}"></li>
                 <li>{{ email }}</li>
+            }@else{
+                    
+                <li routerLink="/login">Login</li>
+                <li routerLink="/register">Register</li>
             }
         </ul>
     </nav>
