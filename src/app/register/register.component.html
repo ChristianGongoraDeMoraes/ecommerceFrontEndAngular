@@ -12,6 +12,9 @@
         <input type="password" id="password" [(ngModel)]="password" name="password"/>
 
 
+        <label for="image">Image</label>
+        <input type="file" id="image" (change)="onFileSelected($event)" name="image">
+
         <button (click)="createNewUser()">Register</button>
         
     </div>

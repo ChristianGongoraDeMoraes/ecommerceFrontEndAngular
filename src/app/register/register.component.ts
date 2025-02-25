@@ -18,10 +18,14 @@ type UserRegister = {
 })
 export class RegisterComponent {
   constructor(private request : HttpServiceService, private router: Router){}
-
+  selectedImage:any = null;
   email = '';
   password = '';
   name = '';
+  
+  onFileSelected(event: any) {
+    this.selectedImage = event.target.files[0];
+  }
 
   createNewUser(){
     const user : UserRegister = {
@@ -35,6 +39,7 @@ export class RegisterComponent {
       next: (data: any) => {
         if(data){
           alert("Register Successfull!");
+          this.postUserImageApi();
           this.router.navigate(["login"]);
         }else{
           alert("Something goes wrong");
@@ -44,5 +49,16 @@ export class RegisterComponent {
         alert("Something goes wrong");
       }
     });
-   }
+  }
+  postUserImageApi(){
+    this.request.postUserImageToApi(this.selectedImage, this.email).subscribe({
+      next: (data: any)=>{
+        console.log("postUserImageToApi:"+data);
+  
+      },
+      error: (error: any) =>{
+        console.log('Erro ao cadastar image', error);
+      }
+    });
+  } 
 }

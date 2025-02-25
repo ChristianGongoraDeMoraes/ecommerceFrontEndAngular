@@ -54,5 +54,17 @@ export class HttpServiceService {
     const url = `http://localhost:8080/Api/User/register`
     return this.http.post(url, user);
   }
+
+  postUserImageToApi(image: any, email: any){
+    const url = `http://localhost:8080/image/upload/image`
+    let formatUserEmail: string = `{"userEmail" : "${email}"}`;
+
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('user', formatUserEmail);
+    console.log(formData);
+
+    return this.http.post(url, formData);
+  }
   
 }
