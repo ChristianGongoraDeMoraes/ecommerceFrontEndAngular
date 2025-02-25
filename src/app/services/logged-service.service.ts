@@ -6,15 +6,18 @@ import { Injectable } from '@angular/core';
 export class LoggedServiceService {
 
   constructor() { }
-
   isLogged: boolean = false;
+  email:String = '';
 
-  setLoggedOn(){
+  setLoggedOn(email:String){
     this.isLogged = true;
+    this.email = email;
   }
-
-  setLoggedOff(){
-    this.isLogged = false;
+  getLogged(){
+    return this.isLogged;
+  }
+  getEmail(){
+    return this.email;
   }
 
 }

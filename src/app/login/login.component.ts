@@ -35,7 +35,7 @@ export class LoginComponent {
     this.request.getLoginUser(user).subscribe({
       next: (data: any) => {
         if(data){
-          this.logServ.setLoggedOn;
+          this.logServ.setLoggedOn(this.email);
           this.router.navigate(['market']);
         }else{
           alert("Login invalido!")

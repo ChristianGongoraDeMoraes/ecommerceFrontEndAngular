@@ -10,6 +10,10 @@
                 <li routerLink="/market">Market</li>
                 -->
             <li routerLink="/createProduct">CreateProduct</li>
+            @if(isLogged){
+                <li><img src="http://localhost:8080/image/get/image/user/{{email}}"></li>
+                <li>{{ email }}</li>
+            }
         </ul>
     </nav>
 </header>

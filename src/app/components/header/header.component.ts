@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LoggedServiceService } from '../../services/logged-service.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,6 +14,13 @@ export class HeaderComponent {
   protected title = signal('title');
   {{ title() }}
   */
+  email: String | any = null;
+  isLogged = false;
   
+  constructor(private loggedService: LoggedServiceService){}
 
+  ngDoCheck(){
+    this.isLogged = this.loggedService.getLogged();
+    this.email = this.loggedService.getEmail();
+  }
 }
