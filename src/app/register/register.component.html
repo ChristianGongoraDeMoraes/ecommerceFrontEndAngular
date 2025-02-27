@@ -15,6 +15,9 @@
         <label for="image">Image</label>
         <input type="file" id="image" (change)="onFileSelected($event)" name="image">
 
+        @if(this.errorMessage){
+            <span class="errorMessage">{{ errorMessage }}</span>
+        }
         <button (click)="createNewUser()">Register</button>
         
     </div>

@@ -22,6 +22,8 @@ export class RegisterComponent {
   email = '';
   password = '';
   name = '';
+
+  errorMessage = '';
   
   onFileSelected(event: any) {
     this.selectedImage = event.target.files[0];
@@ -41,12 +43,14 @@ export class RegisterComponent {
           alert("Register Successfull!");
           this.postUserImageApi();
           this.router.navigate(["login"]);
-        }else{
-          alert("Something goes wrong");
         }
       },
       error: (err: any) => {
-        alert("Something goes wrong");
+        if(this.password.length <= 6 || this.password.length >= 16){
+          this.errorMessage = "Password must be more than 6 and less than 16";
+        }else{
+          this.errorMessage = "Invalid credentials...";
+        }
       }
     });
   }

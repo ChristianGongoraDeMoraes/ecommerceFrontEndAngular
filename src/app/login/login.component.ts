@@ -21,7 +21,7 @@ export class LoginComponent {
   
   constructor(private request : HttpServiceService, private router : Router, private logServ: LoggedServiceService){}
 
-
+  errorMessage = '';
 
   email = '';
   password = '';
@@ -37,12 +37,11 @@ export class LoginComponent {
         if(data){
           this.logServ.setLoggedOn(this.email);
           this.router.navigate(['market']);
-        }else{
-          alert("Login invalido!")
         }
       },
       error: (error: any) => {
-       alert('Something goes wrong');
+        this.errorMessage = 'Invalid credentials';
+        console.log('error')
       }
     });
    }

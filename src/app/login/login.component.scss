@@ -58,5 +58,13 @@
         text-decoration: underline;
         cursor: pointer;
     }
+    .errorMessage{
+        color: red;
+        background-color: white;
+        padding: 7px;
+        border-radius: 10px;
+        width: 100%;
+        margin: 10px;
+    }
 
 }
