@@ -25,6 +25,11 @@ export class RegisterComponent {
 
   errorMessage = '';
   
+   /*ngDoCheck(){
+    this.errorMessage = this.errorMessage;
+  }*/
+
+
   onFileSelected(event: any) {
     this.selectedImage = event.target.files[0];
   }

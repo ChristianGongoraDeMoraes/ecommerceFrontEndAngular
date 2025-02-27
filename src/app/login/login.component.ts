@@ -25,6 +25,9 @@ export class LoginComponent {
 
   email = '';
   password = '';
+  /*ngDoCheck(){
+    this.errorMessage = this.errorMessage;
+  }*/
 
   loginUser(){
     const user : User = {
@@ -37,6 +40,8 @@ export class LoginComponent {
         if(data){
           this.logServ.setLoggedOn(this.email);
           this.router.navigate(['market']);
+        }else{
+          this.errorMessage = 'Invalid credentials';
         }
       },
       error: (error: any) => {
