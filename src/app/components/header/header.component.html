@@ -9,7 +9,16 @@
             @if(isLogged){
                 <li routerLink="/createProduct">CreateProduct</li>
                 <li routerLink="/market">Market</li>
-                <li><img src="http://localhost:8080/image/get/image/user/{{email}}"></li>
+                <li>
+                    <img class= "perfilImage" src="http://localhost:8080/image/get/image/user/{{email}}"  (click)="dropDownPicture()">
+                    @if(isDropDown){
+                        <div>
+                            <ul>
+                                <li class="dropDownPicture"> AQUI É O DROP DOWN</li>
+                            </ul>
+                        </div>
+                    }
+                </li>
                 <li>{{ email }}</li>
             }@else{
                     

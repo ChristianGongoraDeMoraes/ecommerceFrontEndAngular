@@ -14,6 +14,8 @@ export class HeaderComponent {
   protected title = signal('title');
   {{ title() }}
   */
+  isDropDown:Boolean = false;
+
   email: String | any = null;
   isLogged = false;
   
@@ -22,5 +24,9 @@ export class HeaderComponent {
   ngDoCheck(){
     this.isLogged = this.loggedService.getLogged();
     this.email = this.loggedService.getEmail();
+  }
+
+  dropDownPicture(){
+    this.isDropDown = !this.isDropDown;
   }
 }

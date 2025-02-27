@@ -27,16 +27,40 @@ nav{
     }
 
     li{ 
-        img{
+        margin-left: 5px;
+        list-style-type: none;
+        cursor: pointer;
+        .perfilImage{
             height: 40px;
             width: 40px;
             margin: 0;
             border-radius: 100%;
             box-shadow: white 1px 1px 3px 1px,white -1px -1px 3px -1px;
         }
-        margin-left: 5px;
-        list-style-type: none;
-        cursor: pointer;
+        div{
+            position: absolute;
+            ul{
+                position: relative;
+                
+                display: flex;
+                align-items: end;
+                justify-content: start;
+                flex-direction: column;
+                gap:0;
+                li{
+                    position:relative;
+                    display: block;
+                    color: rgb(255, 255, 255);
+                    padding: 5px;
+                    width: 100%;
+                    background-color: black;
+                }
+                li:hover{
+                    background-color: #d8d8d8;
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
     }
     li:hover{
         color: red;
@@ -47,7 +71,10 @@ nav{
         justify-content: center;
         align-items: center;
         gap: 15px;
-        height: 40px
+        height: 40px;
+       
+        
+
     }
 
 }
