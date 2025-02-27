@@ -1,0 +1,8 @@
+<app-header/>
+<div class="changePicture">
+    <form class="formImage">
+        <input type="file" id="image" (change)="onFileSelected($event)" name="image">
+
+        <button (click)="sendForm()">Send Image</button>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoggedServiceService } from '../../services/logged-service.service';
 
 
@@ -19,7 +19,7 @@ export class HeaderComponent {
   email: String | any = null;
   isLogged = false;
   
-  constructor(private loggedService: LoggedServiceService){}
+  constructor(private loggedService: LoggedServiceService, private router : Router){}
 
   ngDoCheck(){
     this.isLogged = this.loggedService.getLogged();
@@ -28,5 +28,9 @@ export class HeaderComponent {
 
   dropDownPicture(){
     this.isDropDown = !this.isDropDown;
+  }
+
+  navigateToProfilePicture(){
+    this.router.navigate(["changePicture"]);
   }
 }

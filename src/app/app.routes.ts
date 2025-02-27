@@ -6,6 +6,7 @@ import { MarketComponent } from './market/market.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ShowBuyComponent } from './show-buy/show-buy.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePictureComponent } from './change-picture/change-picture.component';
 
 export const routes: Routes = [
        
@@ -29,5 +30,6 @@ export const routes: Routes = [
     { path: 'createProduct', component: CreateProductComponent },
     { path: 'showBuy', component: ShowBuyComponent },
     { path: 'forgotPassword', component: ForgotPasswordComponent },
+    { path: 'changePicture', component: ChangePictureComponent },
     
 ];
