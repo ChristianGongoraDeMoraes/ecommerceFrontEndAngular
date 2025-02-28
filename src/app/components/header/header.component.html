@@ -10,7 +10,7 @@
                 <li routerLink="/createProduct">CreateProduct</li>
                 <li routerLink="/market">Market</li>
                 <li>
-                    <img class= "perfilImage" src="http://localhost:8080/image/get/image/user/{{email}}"  (click)="dropDownPicture()">
+                    <img class= "perfilImage" [src]="imagePerfilHeaderUrl"  (click)="dropDownPicture()">
                     @if(isDropDown){
                         <div>
                             <ul>

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, DoCheck, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { LoggedServiceService } from '../../services/logged-service.service';
 
@@ -9,22 +9,30 @@ import { LoggedServiceService } from '../../services/logged-service.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck {
   /*
   protected title = signal('title');
   {{ title() }}
   */
-  isDropDown:Boolean = false;
+ isDropDown:Boolean = false;
+ email: String;
+ isLogged;
+ private loggedService = inject(LoggedServiceService);
 
-  email: String | any = null;
-  isLogged = false;
+ constructor(/*private loggedService: LoggedServiceService*/ private router : Router){
+   this.isLogged = this.loggedService.getLogged();
+   this.email = this.loggedService.getEmail();
+   this.imagePerfilHeaderUrl = this.imagePerfilHeaderUrl;
+  }
   
-  constructor(private loggedService: LoggedServiceService, private router : Router){}
-
+  imagePerfilHeaderUrl:String = `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`
+  
   ngDoCheck(){
     this.isLogged = this.loggedService.getLogged();
     this.email = this.loggedService.getEmail();
+    this.imagePerfilHeaderUrl = `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`
   }
+  
 
   dropDownPicture(){
     this.isDropDown = !this.isDropDown;

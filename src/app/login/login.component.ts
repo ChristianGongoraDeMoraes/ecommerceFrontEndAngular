@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
 import { FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -18,8 +18,8 @@ type User = {
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  
-  constructor(private request : HttpServiceService, private router : Router, private logServ: LoggedServiceService){}
+  private logServ = inject(LoggedServiceService);
+  constructor(private request : HttpServiceService, private router : Router/*, private logServ: LoggedServiceService*/){}
 
   errorMessage = '';
 

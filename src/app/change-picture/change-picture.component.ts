@@ -3,10 +3,11 @@ import { HeaderComponent } from '../components/header/header.component';
 import { LoggedServiceService } from '../services/logged-service.service';
 import { HttpServiceService } from '../services/http-service.service';
 import { Route, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-change-picture',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, FormsModule],
   templateUrl: './change-picture.component.html',
   styleUrl: './change-picture.component.scss'
 })
@@ -38,6 +39,7 @@ export class ChangePictureComponent {
         this.router.navigate(["market"]);
       }
     });
-    this.router.navigate(["market"]);
+    //BUG, QUEBRA REQUEST \/
+    //this.router.navigate(["market"]);
   }
 }
