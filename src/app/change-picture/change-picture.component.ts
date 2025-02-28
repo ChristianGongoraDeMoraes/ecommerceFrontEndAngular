@@ -38,5 +38,6 @@ export class ChangePictureComponent {
         this.router.navigate(["market"]);
       }
     });
+    this.router.navigate(["market"]);
   }
 }
