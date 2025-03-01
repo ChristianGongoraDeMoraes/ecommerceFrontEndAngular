@@ -9,30 +9,35 @@ import { LoggedServiceService } from '../../services/logged-service.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements DoCheck {
+export class HeaderComponent {
   /*
   protected title = signal('title');
   {{ title() }}
   */
- isDropDown:Boolean = false;
- email: String;
- isLogged;
- private loggedService = inject(LoggedServiceService);
+  timeStamp:any = new Date();
+  isDropDown:Boolean = false;
+  email: String;
+  isLogged;
+  private loggedService = inject(LoggedServiceService);
 
- constructor(/*private loggedService: LoggedServiceService*/ private router : Router){
-   this.isLogged = this.loggedService.getLogged();
-   this.email = this.loggedService.getEmail();
-   this.imagePerfilHeaderUrl = this.imagePerfilHeaderUrl;
-  }
-  
-  imagePerfilHeaderUrl:String = `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`
-  
-  ngDoCheck(){
+  constructor(/*private loggedService: LoggedServiceService*/ private router : Router){
     this.isLogged = this.loggedService.getLogged();
     this.email = this.loggedService.getEmail();
-    this.imagePerfilHeaderUrl = `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`
+    this.imagePerfilHeaderUrl = this.imagePerfilHeaderUrl;
   }
-  
+    
+  imagePerfilHeaderUrl:String = `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`
+
+  getImagePerfil() {
+      if(this.timeStamp) {
+        return this.imagePerfilHeaderUrl + '?' + this.timeStamp;
+      }
+      return this.imagePerfilHeaderUrl;
+  }
+  setImagePerfil(url: string) {
+    this.imagePerfilHeaderUrl= `http://localhost:8080/image/get/image/user/${this.loggedService.getEmail()}`;
+    this.timeStamp = (new Date()).getTime();
+  }
 
   dropDownPicture(){
     this.isDropDown = !this.isDropDown;

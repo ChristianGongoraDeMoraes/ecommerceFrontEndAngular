@@ -36,6 +36,7 @@ export class ChangePictureComponent {
         this.router.navigate(["market"]);
       },
       error: (error: any) =>{
+        //setTimeout( () => { this.router.navigate(["market"]); }, 2000 );
         this.router.navigate(["market"]);
       }
     });
