@@ -16,6 +16,10 @@ Specific Product Page
 Principal Page...
 ![home](https://github.com/user-attachments/assets/6640f709-1e76-4b51-a228-ae7e246c73f9)
 
+Forgot pass
+![forgotPassEcommerce](https://github.com/user-attachments/assets/d5283f08-7ce3-4c79-aac4-cf226f54808a)
+Email Result
+![emailStrappi](https://github.com/user-attachments/assets/97a39374-5eab-48f1-a3a6-2ba7d6505a69)
 
 
 
