@@ -14,6 +14,9 @@ type UserRegister = {
   email: String,
   password: String
 }
+type ForgotPass = {
+  email: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +68,12 @@ export class HttpServiceService {
     console.log(formData);
 
     return this.http.post(url, formData);
+  }
+
+  forgotPass(forgotPass: ForgotPass): Observable<any>{
+    const url = `http://localhost:8080/api/emails`
+    
+    return this.http.post(url, forgotPass);
   }
   
 }

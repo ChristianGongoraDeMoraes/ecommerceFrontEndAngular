@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpServiceService } from '../services/http-service.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,7 +13,17 @@ import { FormsModule } from '@angular/forms';
 export class ForgotPasswordComponent {
   email = '';
 
+  private router = inject(Router);
+  private request = inject(HttpServiceService);
+
   SendEmail(){
-    alert(`Email Sent to : ${this.email}`)
+    this.request.forgotPass({email: this.email}).subscribe({
+      next: (data: any) => {
+        this.router.navigate(["login"]);
+      },
+      error: (err: any) => {
+       console.log("invalid email")
+      }
+    });
   }
 }
