@@ -15,6 +15,7 @@
     .card{
         //transition: transform 6s ease-in-out;
         //transform-style: preserve-3d; 
+        position: relative;
 
         min-height: 0;
         display: flex;
@@ -26,8 +27,8 @@
         border-radius: 30px;
         .cardImage{
             img{
-                transition: transform 2s ease-in-out;
-                transform-style: preserve-3d; 
+                //transition: transform 1s ease-in-out;
+                //transform-style: preserve-3d; 
 
                 width: 150px;
                 height: 150px;
@@ -66,10 +67,41 @@
             img{
                 width: 170px;
                 height: 170px;
-                transform: skewY(10deg);
-                box-shadow: rgba(255, 255, 255, 0.596) 1px 1px 5px;
+                //transform: skewY(5deg);
+                box-shadow: rgba(0, 0, 0, 0.596) 1px 1px 5px;
             }
         }
         box-shadow: white 0.1px 0.1px 5px;
     }
+}
+
+
+.rgb:hover::after{
+    content: "";
+    background: linear-gradient(45deg,
+    red 0%,
+    orange 10%,
+    yellow 20%,
+    green 30%,
+    aqua 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    blue 70%,
+    purple 80%,
+    #fb07d9 90%,
+    red 100%)
+    repeat 0% 0% / 300% 100% ;
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    filter: blur(8px);
+    //transform: translateZ(-2px);
+    z-index: -1;
+    animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }

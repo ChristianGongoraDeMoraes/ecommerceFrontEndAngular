@@ -1,14 +1,16 @@
 .divShowBuy{
     height: 100%;
     width: 100%;
-
+    background-color: rgba(0, 0, 0, 0.658);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 150px;
-
+    
     .divImg{
+        position: relative;
         .spanImg{
+            min-height: 0;
             img{
                 border: 2px solid black;
                 border-radius: 10px;
@@ -20,6 +22,7 @@
     }
 
     .productExplain{
+        min-height: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,4 +46,35 @@
         cursor: pointer;
         background-color: green;
     }
+}
+
+
+.rgb::after{
+    content: "";
+    background: linear-gradient(45deg,
+    red 0%,
+    orange 10%,
+    yellow 20%,
+    green 30%,
+    aqua 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    blue 70%,
+    purple 80%,
+    #fb07d9 90%,
+    red 100%)
+    repeat 0% 0% / 300% 100% ;
+    position: absolute;
+    inset: -3px;
+
+    filter: blur(16px);
+    //transform: translateZ(-2px);
+    z-index: -1;
+    animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
