@@ -1,12 +1,3 @@
-Register Page
-![registerPage](https://github.com/user-attachments/assets/81a41422-fbb2-4ecf-81a1-0a3dd1e28d54)
-
-Login Page
-![loginPage](https://github.com/user-attachments/assets/911b45c0-911c-4c9f-af08-3496abcdd92b)
-
-Creating Product Page
-![CreateProductPage](https://github.com/user-attachments/assets/10272b4c-859d-469e-a5c4-036c5a48104e)
-
 Market Page
 ![marketPage](https://github.com/user-attachments/assets/ca4526c6-abd5-4fc0-a161-8fb72a7a003d)
 
@@ -16,6 +7,20 @@ Specific Product Page
 Principal Page...
 ![home](https://github.com/user-attachments/assets/6640f709-1e76-4b51-a228-ae7e246c73f9)
 
+Register Page
+![registerPage](https://github.com/user-attachments/assets/81a41422-fbb2-4ecf-81a1-0a3dd1e28d54)
+
+Login Page
+![loginPage](https://github.com/user-attachments/assets/911b45c0-911c-4c9f-af08-3496abcdd92b)
+
+Creating Product Page
+![CreateProductPage](https://github.com/user-attachments/assets/10272b4c-859d-469e-a5c4-036c5a48104e)
+
+
+Forgot pass
+![forgotPassEcommerce](https://github.com/user-attachments/assets/d5283f08-7ce3-4c79-aac4-cf226f54808a)
+Email Result
+![emailStrappi](https://github.com/user-attachments/assets/97a39374-5eab-48f1-a3a6-2ba7d6505a69)
 
 
 
