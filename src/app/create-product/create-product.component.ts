@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from '../services/http-service.service';
@@ -14,13 +14,13 @@ type Product = {
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.scss'
 })
-export class CreateProductComponent {
+export class CreateProductComponent{
 
   constructor(private request : HttpServiceService){
   }
   
   name = '';
-  price = 0;
+  price = '';
   selectedImage: any = null;
   
  
@@ -28,16 +28,17 @@ export class CreateProductComponent {
     this.selectedImage = event.target.files[0];
   }
 
-  addNewProduct(){
+  addNewProduct(){ 
+
     const product : Product = {
       name : this.name,
-      price : this.price
+      price : Number(this.price)
     }
 
     this.request.postProductsToApi(product).subscribe({
       next: (data: any) => {
         console.log(data);
-        alert("user criado com sucesso!");
+        alert("Criado com sucesso!");
         this.postImageApi();
       },
       error: (error: any) => {

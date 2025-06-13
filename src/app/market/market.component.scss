@@ -1,43 +1,41 @@
-.background{
-    height: 500vh;
-    width: 100%;
-    z-index: -1;
-    background-color: #777;
-    position: fixed;
-}
-
-.ghostbox{
-    height: 70px;
-    width: 100%;
-}
-
 .marketDiv{
-    height: 90%;
+    background-color: rgba(0, 0, 0, 0.616);
+    background-attachment: fixed;
+    background-position: center;
+
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin: 20px;
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
     .card{
+        //transition: transform 6s ease-in-out;
+        //transform-style: preserve-3d; 
+
+        min-height: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 50px;
-        border: 2px solid black;
-        box-shadow: white 1px 1px 4px 1px;
-        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.089);
+        border-radius: 30px;
         .cardImage{
             img{
+                transition: transform 2s ease-in-out;
+                transform-style: preserve-3d; 
+
                 width: 150px;
                 height: 150px;
-                color: rebeccapurple;
-                font-size: larger;
-                border: 2px solid black;
+                border-radius: 50px;
             }
+            
         }
-    
+        font-weight: 600;
         .cardTitle{
             color: white;
             font-size: medium;
@@ -52,16 +50,26 @@
 
         .buyBtn{
             margin-top: 20px;
-            border-radius: 10px;
-            padding: 10px 30px;
-            text-shadow: black 1px 1px 2px;
-            border: 2px solid green;
-            background-color: lightgreen;
-            color: white;
+            border-radius: 40px;
+            padding: 5px 25px;
+            border: none;
+            background-color: rgb(41, 99, 41);
+            font-weight: 600;
         }
         .buyBtn:hover{
-            background-color: green;
+            background-color: rgb(0, 247, 0);
             cursor: pointer;
         }
+    }
+    .card:hover{
+        .cardImage{
+            img{
+                width: 170px;
+                height: 170px;
+                transform: skewY(10deg);
+                box-shadow: rgba(255, 255, 255, 0.596) 1px 1px 5px;
+            }
+        }
+        box-shadow: white 0.1px 0.1px 5px;
     }
 }

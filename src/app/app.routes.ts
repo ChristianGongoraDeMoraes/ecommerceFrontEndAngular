@@ -23,7 +23,7 @@ export const routes: Routes = [
             return import('./login/login.component').then((m) => m.LoginComponent)
         },
     }*/
-    { path: '', component: HomeComponent },
+     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'market', component: MarketComponent },
