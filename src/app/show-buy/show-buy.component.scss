@@ -6,12 +6,14 @@
     justify-content: center;
     align-items: center;
     gap: 150px;
-    
+    flex-wrap: wrap;
     .divImg{
         position: relative;
         animation: zindex999 3s linear infinite;
+        min-height: 0;
+        margin-top: 100px;
+
         .spanImg{
-            min-height: 0;
             img{
                 border: 2px solid black;
                 border-radius: 10px;

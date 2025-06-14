@@ -11,7 +11,10 @@ export class ProductServiceService {
 
   productName: String= ''
   productPrice: Number | null = null;
-
+  productId: String = ''
+  setProductId(e: String){
+    this.productId = e;
+  }
   setProductName(e: String){
     this.productName = e;
   }

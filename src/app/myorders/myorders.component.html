@@ -1,0 +1,25 @@
+<app-header/>
+<div class = "superDiv">
+    <div class="ordersDiv">
+        <div class="totalConta">
+            <p class="ptotal">
+                Dinheir total gasto: $ {{ getTotalGasto() }}
+            </p>
+        </div>
+        @for (order of myProductsByOrders; track order.id) {
+            <li class="order"> 
+                <div class="cardImage">
+                    <img src="http://localhost:8080/products/get/image/product/{{order.name}}">
+                    <p>
+                        {{ order.name }}
+                    </p>
+                </div>
+                <p>
+                    $ {{ order.price }}
+                </p>
+            </li>
+        } @empty {
+            <h1>There are no items.</h1>
+        }
+    </div>
+</div>

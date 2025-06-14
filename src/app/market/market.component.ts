@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ProductServiceService } from '../services/product-service.service';
 
 type  Product = {
+  id: String,
   name: String,
   price: Number
 }
@@ -26,6 +27,7 @@ export class MarketComponent implements OnInit{
      for(let i of this.products){
       if(product == i.name){
         /*this.products.splice(this.products.indexOf(i), 1)*/
+        this.prod.setProductId(i.id);
         this.prod.setProductName(i.name);
         this.prod.setProductPrice(i.price);
         this.router.navigate(['showBuy']);

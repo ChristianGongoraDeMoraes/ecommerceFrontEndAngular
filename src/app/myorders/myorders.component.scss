@@ -1,0 +1,78 @@
+.superDiv{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    h1{
+        color: white;
+    }
+    .ordersDiv{
+        margin-top: 100px;
+        min-height: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: rgba(255, 254, 253, 0.185);
+        border-radius: 20px;
+        padding: 20px;
+        margin-right: 50px;
+        margin-left: 50px;
+
+        gap: 10px;
+        .totalConta{
+            font-size: large;
+            font-weight: 600;
+            width: 100%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .ptotal{
+                background-color: rgba(255, 255, 255, 0.274);
+                border-radius: 20px;
+                padding: 20px;
+            }
+
+        }
+        .order{
+            min-height: 0;
+    
+            font-weight: 800;
+            font-size: 18px;
+            
+            width: 200px;
+            padding: 10px 50px;
+            background-color: rgba(255, 255, 255, 0.473);
+            border-radius: 20px;
+            list-style-type: none;
+            border: 1px solid white;
+            
+            .cardImage{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 10px;
+                p{
+                    text-shadow: white 0.1px 0.1px 5px;
+                }
+                img{
+                    //transition: transform 1s ease-in-out;
+                    //transform-style: preserve-3d;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                    border: 2px solid black;
+                }
+                
+            }
+        }
+        .order:hover{
+            background-color: rgba(255, 255, 255, 0.700);
+        }
+    }
+}

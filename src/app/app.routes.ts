@@ -7,6 +7,7 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { ShowBuyComponent } from './show-buy/show-buy.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePictureComponent } from './change-picture/change-picture.component';
+import { MyordersComponent } from './myorders/myorders.component';
 
 export const routes: Routes = [
        
@@ -31,5 +32,5 @@ export const routes: Routes = [
     { path: 'showBuy', component: ShowBuyComponent },
     { path: 'forgotPassword', component: ForgotPasswordComponent },
     { path: 'changePicture', component: ChangePictureComponent },
-    
+    { path: 'myorders', component: MyordersComponent },
 ];
