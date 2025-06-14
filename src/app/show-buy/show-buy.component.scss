@@ -9,12 +9,13 @@
     
     .divImg{
         position: relative;
+        animation: zindex999 3s linear infinite;
         .spanImg{
             min-height: 0;
             img{
                 border: 2px solid black;
                 border-radius: 10px;
-                box-shadow: rgb(255, 255, 255) 1px 1px 3px 1px, rgb(255, 255, 255) -1px -1px 3px -1px;
+                box-shadow: rgba(255, 255, 255, 0.123) 1px 1px 20px, rgba(255, 255, 255, 0.377) -1px -1px 20px;
                 height: 400px;
                 width: 400px;
             }
@@ -67,14 +68,23 @@
     position: absolute;
     inset: -3px;
 
-    filter: blur(16px);
-    //transform: translateZ(-2px);
+    filter: blur(10px);
     z-index: -1;
-    animation: rgb 6s linear infinite;
+
+    transform: translateZ(-2px);
+    animation: rgb 3s linear infinite;
 }
 
 @keyframes rgb{
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
+}
+@keyframes zindex999{
+    from{
+        z-index: 999;
+    }
+    to{
+        z-index: 999;
+    }
 }

@@ -2,7 +2,6 @@
     background-color: rgba(0, 0, 0, 0.616);
     background-attachment: fixed;
     background-position: center;
-
     min-height: 100%;
     display: flex;
     justify-content: center;
@@ -10,8 +9,8 @@
     gap: 20px;
     flex-wrap: wrap;
     padding-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     .card{
         //transition: transform 6s ease-in-out;
         //transform-style: preserve-3d; 
@@ -25,11 +24,13 @@
         padding: 50px;
         background-color: rgba(255, 255, 255, 0.089);
         border-radius: 30px;
+        
         .cardImage{
             img{
                 //transition: transform 1s ease-in-out;
                 //transform-style: preserve-3d; 
 
+                
                 width: 150px;
                 height: 150px;
                 border-radius: 50px;
@@ -63,6 +64,8 @@
         }
     }
     .card:hover{
+        background-color: rgba(255, 255, 255, 0.411);
+        backdrop-filter: blur(10px);
         .cardImage{
             img{
                 width: 170px;
@@ -72,6 +75,8 @@
             }
         }
         box-shadow: white 0.1px 0.1px 5px;
+        .cardPrice{text-shadow: black 0.1px 0.1px 6px, black -0.1px -0.1px 6px;}
+        .cardTitle{text-shadow: black 0.1px 0.1px 6px,  black -0.1px -0.1px 6px;}
     }
 }
 
@@ -94,10 +99,12 @@
     position: absolute;
     inset: -3px;
     border-radius: 30px;
-    filter: blur(8px);
+    filter: blur(10px);
     //transform: translateZ(-2px);
     z-index: -1;
-    animation: rgb 6s linear infinite;
+    animation: rgb 2s linear infinite;
+    //animation: rgb 0.25s  cubic-bezier(0.8,0.1,0.2,1) infinite;
+    //animation: spin 3s linear infinite;
 }
 
 @keyframes rgb{
@@ -105,3 +112,10 @@
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
+/*@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}*/
